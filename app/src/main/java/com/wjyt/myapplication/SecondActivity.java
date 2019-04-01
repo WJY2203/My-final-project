@@ -132,12 +132,11 @@ public class SecondActivity extends Activity{
             isRecording = false;
             btn_RecordStart.setEnabled(true);
             btn_RecordStop.setEnabled(false);
-            //btn_translate.setEnabled(true);
+            btn_translate.setEnabled(true);
             Toast.makeText(SecondActivity.this, "Stop Inputting voice", Toast.LENGTH_SHORT).show();
             if(mytext == null){
+                //btn_translate.setEnabled(false);
                 Toast.makeText(SecondActivity.this, "Speech recognition in progress", Toast.LENGTH_LONG).show();
-            } else {
-                    btn_translate.setEnabled(true);
             }
             //Toast.makeText(SecondActivity.this, "Stop Inputting voice", Toast.LENGTH_SHORT).show();
             /* 开始识别 */
@@ -153,7 +152,7 @@ public class SecondActivity extends Activity{
     private static String token = null;
     private static final String apiKey = "98C36KDSvikCvnW43M9Eqtbj";             // API Key 
     private static final String secretKey = "yLMHBfjK2M41XmS8qKN6r9F3iTtO5wUA";  // Secret Key
-    private static final String cuid = "862217035490850";            //唯一表示码
+    private static final String cuid = "358240051111110";            //唯一表示码
     private static int dev_pid = 1537 ;
     private void getToken(){
         new Thread(new Runnable() {
@@ -215,6 +214,7 @@ public class SecondActivity extends Activity{
     //字符处理
     private  String printResponse(HttpURLConnection conn) throws Exception {
         if (conn.getResponseCode() != 200) {
+            Toast.makeText(SecondActivity.this, "buzidao", Toast.LENGTH_LONG).show();
             return "";
         }
         InputStream is = conn.getInputStream();

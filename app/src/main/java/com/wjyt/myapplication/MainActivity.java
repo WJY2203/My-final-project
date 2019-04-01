@@ -49,16 +49,12 @@ public class MainActivity extends AppCompatActivity {
 
         btn_English.setOnClickListener(click);
         btn_Chinese.setOnClickListener(click);
-
-        gitpermission();
-
+        if (Build.VERSION.SDK_INT >= 23) {
+            gitpermission();
+        }
     }
 
 
-
-
-            //ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PERMISSION_GRANTED &&
-            //ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PERMISSION_GRANTED
     private void gitpermission(){
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PERMISSION_GRANTED ) {
             ActivityCompat.requestPermissions(this, PERMISSIONS_STORAGE, REQUEST_PERMISSION_CODE);
@@ -116,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
                         alertDialog.setCanceledOnTouchOutside(false);
                         alertDialog.show();
                     }
-
                 }
             }
         }

@@ -29,9 +29,6 @@ public class ThirdActivity extends Activity {
         setContentView(R.layout.activity_third);
         Intent intent=getIntent();
         String NewsID=intent.getStringExtra("newsid");
-        //String lag_type=intent.getStringExtra("lagtype");
-        //textView =(TextView)findViewById(R.id.textView);
-        //textView.setText(lag_type);
         Log.d("return:",NewsID);
         textView2 =(TextView)findViewById(R.id.textView2);
         textView2.setText(NewsID);
